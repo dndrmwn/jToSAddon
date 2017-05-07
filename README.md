@@ -2,8 +2,7 @@
 
 すべてアドオンマネージャからインストールしてください。
 
-- camcon <https://github.com/suzumeiko/jToSAddon/releases/tag/camcon>
-
+***camcon***
 カメラ座標をGUIでわかりやすく変更できます。
 
 # Special Thanks
