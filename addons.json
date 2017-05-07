@@ -6,7 +6,7 @@
 		"fileVersion" : "v1.0.0",
 		"releaseTag" : "camcon",
 		"unicode" : "⛄",
-		"description" : "Camera coordinates can be changed with the GUI // カメラ座標をGUIで変更できます",
+		"description" : "Camera coordinates can be changed with the GUI // カメラ座標をGUIで変更できます。SS撮影会にどうぞ",
 		"tags" : [
 			"ui",
 			"camera",
