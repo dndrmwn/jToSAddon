@@ -1,0 +1,16 @@
+[
+	{
+		"name" : "CamCon",
+		"file" : "camcon",
+		"extension" : "ipf",
+		"fileVersion" : "v1.0.0",
+		"releaseTag" : "camcon",
+		"unicode" : "⛄",
+		"description" : "Camera coordinates can be changed with the GUI",
+		"tags" : [
+			"ui",
+			"camera",
+			"photo session"
+		]
+	}
+]
