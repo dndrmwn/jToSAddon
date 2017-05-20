@@ -7,6 +7,10 @@ CUIで操作だったり、ズームだけいじるのはあったけど、GUI�
 Luaにごちゃごちゃ書きすぎてるかもしれない
 初めて作ったから勝手がいまいちだったり…
 
+# ボタン類
+[W] ウィンドウを小さくします 
+[R] カメラの変更をリセットします 
+
 # その他
 - 参考にしたもの : zoomyplus <https://github.com/FiftyCaliber/ToS-Addons>
 - 参考にしたもの : AltZoom <https://github.com/Lanif2142/AltZoom>
