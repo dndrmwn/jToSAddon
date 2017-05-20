@@ -18,6 +18,7 @@ g.settingsFileLoc = string.format("../addons/%s/settings.json", addonNameLower);
 --設定値
 g.settings = {
 	enable = true,
+	window = 1,
 	position = {
 		x = 500,
 		y = 500
@@ -45,7 +46,7 @@ g.master = {
 local acutil = require('acutil');
 
 --lua読み込み時のメッセージ
-CHAT_SYSTEM("[ADDON] camcon loaded");
+--CHAT_SYSTEM("[ADDON] camcon loaded");
 
 --マップ読み込み時処理（1度だけ）
 function CAMCON_ON_INIT(addon, frame)
@@ -69,7 +70,15 @@ function CAMCON_ON_INIT(addon, frame)
 	if g.settings.enable then
 		frame:ShowWindow(1);
 	end
-
+	
+	
+	-- v1.0.1 ウィンドウサイズ配列追加
+	if not g.settings.window then
+		g.settings.window = 1;
+		CAMCON_SAVE_SETTINGS();
+	end
+	
+	
 	--ドラッグ
 	frame:EnableHitTest(1);
 	frame:SetEventScript(ui.LBUTTONUP, "CAMCON_END_DRAG");
@@ -79,12 +88,19 @@ function CAMCON_ON_INIT(addon, frame)
 
 	--フレーム初期化処理
 	CAMCON_INIT_FRAME(frame);
+	
+	-- ウィンドウサイズ再定義
+	CAMCON_WINDOW_INIT();
 end
 
 function CAMCON_SAVE_SETTINGS()
 	acutil.saveJSON(g.settingsFileLoc, g.settings);
 end
 
+
+
+--あとで削除
+--CAMCON_INIT_FRAME(g.frame);
 
 function CAMCON_INIT_FRAME(frame)
   --フレーム初期化処理
@@ -94,15 +110,19 @@ function CAMCON_INIT_FRAME(frame)
 	local titleText = frame:CreateOrGetControl("richtext", "n_titleText", 0, 0, 0, 0);
 	titleText:SetOffset(10,10);
 	titleText:SetFontName("white_16_ol");
-	titleText:SetText("カメラコントロール /camcon");
+	titleText:SetText("/camcon");
 	
 	local tipText = frame:CreateOrGetControl("richtext", "n_tip", 0, 0, 0, 0);
 	tipText:SetOffset(10,120);
 	tipText:SetFontName("white_12_ol");
 	tipText:SetText("Z座標範囲外時、XY弄ると戻るのはclient仕様です");
 	
-	local btnReset = frame:CreateOrGetControl("button", "n_reset", 240, 4, 56, 30);
-	btnReset:SetText("{@sti7}{s16}RESET");
+	local btnReset = frame:CreateOrGetControl("button", "n_resize", 236, 4, 30, 30);
+	btnReset:SetText("{@sti7}{s16}W");
+	btnReset:SetEventScript(ui.LBUTTONUP, "CAMCON_WINDOW_RESIZE");
+	
+	local btnReset = frame:CreateOrGetControl("button", "n_reset", 266, 4, 30, 30);
+	btnReset:SetText("{@sti7}{s16}R");
 	btnReset:SetEventScript(ui.LBUTTONUP, "CAMCON_RESET");
 	
 	local labelX = frame:CreateOrGetControl("richtext", "n_labelX", 0, 0, 0, 0);
@@ -138,6 +158,21 @@ function CAMCON_INIT_FRAME(frame)
 	scrZ:SetMaxSlideLevel(g.master.max.z);
 	scrZ:SetLevel(g.master.default.z);
 	
+	--カメラの仕様によりプリセット機能が使えないことを思い出した跡地
+	-- 設定保存 (v1.0.1+)
+	--local prisetTitle = frame:CreateOrGetControl("richtext", "n_prisetTitle", 0, 0, 0, 0);
+	--prisetTitle:SetOffset(10,150);
+	--prisetTitle:SetFontName("white_16_ol");
+	--prisetTitle:SetText("プリセット");
+	--
+	--local prisetSelect = frame:CreateOrGetControl("droplist", "n_prisetSelect", 10, 164, 220, 40);
+	--tolua.cast(prisetSelect, 'ui::CDropList');
+	--prisetSelect:AddItem(0,"test0",0,"NONE");
+	--prisetSelect:AddItem(1,"test1",0,"NONE");
+	--prisetSelect:AddItem(2,"test2",0,"NONE");
+	--prisetSelect:AddItem(3,"test3",0,"NONE");
+	--prisetSelect:AddItem(4,"test4",0,"NONE");
+	
 end
 
 --カメラ座標リセット
@@ -160,6 +195,27 @@ function CAMCON_RESET()
 	-- UPDATE
 	CAMCON_CAMERA_UPDATE_Z();
 	CAMCON_CAMERA_UPDATE_XY();
+end
+
+--ウィンドウサイズ変更
+function CAMCON_WINDOW_INIT()
+	local frame = ui.GetFrame("camcon");
+	if g.settings.window == 1 then
+		frame:Resize(300,40);
+	else
+		frame:Resize(300,140);
+	end
+end
+function CAMCON_WINDOW_RESIZE()
+	local frame = ui.GetFrame("camcon");
+	if g.settings.window == 0 then
+		g.settings.window = 1;
+		frame:Resize(300,40);
+	else
+		g.settings.window = 0;
+		frame:Resize(300,140);
+	end
+	CAMCON_SAVE_SETTINGS();
 end
 
 --カメラ座標切り替え
