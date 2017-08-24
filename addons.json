@@ -12,5 +12,16 @@
 			"camera",
 			"photo session"
 		]
+	},{
+		"name" : "Monster Frames",
+		"file" : "monsterframes",
+		"extension" : "ipf",
+		"fileVersion" : "v1.0.1",
+		"releaseTag" : "monsterframes",
+		"unicode" : "⛄",
+		"description" : "Excrulon氏のアドオンを勝手に改造しました。HPバー上で重なっていたものを改善",
+		"tags" : [
+			"ui"
+		]
 	}
 ]
