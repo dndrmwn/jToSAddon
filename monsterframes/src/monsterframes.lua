@@ -196,13 +196,16 @@ function TARGETINFOTOBOSS_TARGET_SET_HOOKED(frame, msg, argStr, argNum)
 		return;
 	end
 
-	local bossHP = frame:CreateOrGetControl("richtext", "bossHP", -10, 18, 176, 115);
-	tolua.cast(bossHP, "ui::CRichText");
-	bossHP:SetGravity(ui.CENTER_HORZ, ui.TOP);
-	bossHP:SetTextAlign("center", "center");
-	bossHP:SetText(GetCommaedText(stat.HP) .. " / " .. GetCommaedText(stat.maxHP));
-	bossHP:SetFontName("white_16_ol");
-	bossHP:ShowWindow(1);
+	--local bossHP = frame:CreateOrGetControl("richtext", "bossHP", -10, 18, 176, 115);
+	--tolua.cast(bossHP, "ui::CRichText");
+	--bossHP:SetGravity(ui.CENTER_HORZ, ui.TOP);
+	--bossHP:SetTextAlign("center", "center");
+	--bossHP:SetText(GetCommaedText(stat.HP) .. " / " .. GetCommaedText(stat.maxHP));
+	--bossHP:SetFontName("white_16_ol");
+	--bossHP:ShowWindow(1);
+	
+    local hpText = frame:GetChild('hpText');
+    hpText:SetText(GetCommaedText(stat.HP) .. "/" .. GetCommaedText(stat.maxHP) .. "(" .. (math.floor(stat.HP/stat.maxHP*100)) .. "%)");
 
 	local monactor = world.GetActor(session.GetTargetBossHandle());
 	local montype = monactor:GetType();
@@ -212,7 +215,7 @@ function TARGETINFOTOBOSS_TARGET_SET_HOOKED(frame, msg, argStr, argNum)
 		return;
 	end
 
-	local xPosition = 0;
+	local xPosition = 90;
 	local yPosition = 20;
 	local propertyWidth = 35;
 
@@ -243,12 +246,16 @@ function TARGETINFOTOBOSS_ON_MSG_HOOKED(frame, msg, argStr, argNum)
 			return;
 		end
 
-		local bossHP = frame:CreateOrGetControl("richtext", "bossHP", -10, 18, 176, 115);
-		tolua.cast(bossHP, "ui::CRichText");
-		bossHP:SetGravity(ui.CENTER_HORZ, ui.TOP);
-		bossHP:SetTextAlign("center", "center");
-		bossHP:SetText(GetCommaedText(stat.HP) .. " / " .. GetCommaedText(stat.maxHP));
-		bossHP:SetFontName("white_16_ol");
-		bossHP:ShowWindow(1);
+		--local bossHP = frame:CreateOrGetControl("richtext", "bossHP", -10, 18, 176, 115);
+		--tolua.cast(bossHP, "ui::CRichText");
+		--bossHP:SetGravity(ui.CENTER_HORZ, ui.TOP);
+		--bossHP:SetTextAlign("center", "center");
+		--bossHP:SetText(GetCommaedText(stat.HP) .. " / " .. GetCommaedText(stat.maxHP));
+		--bossHP:SetFontName("white_16_ol");
+		--bossHP:ShowWindow(1);
+		
+    	local hpText = frame:GetChild('hpText');
+	    hpText:SetText(GetCommaedText(stat.HP) .. "/" .. GetCommaedText(stat.maxHP) .. "(" .. (math.floor(stat.HP/stat.maxHP*100)) .. "%)");
+
 	end
 end
