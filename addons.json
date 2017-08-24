@@ -16,10 +16,10 @@
 		"name" : "Monster Frames",
 		"file" : "monsterframes",
 		"extension" : "ipf",
-		"fileVersion" : "v1.0.1",
+		"fileVersion" : "v1.0.2",
 		"releaseTag" : "monsterframes",
 		"unicode" : "⛄",
-		"description" : "Excrulon氏のアドオンを勝手に改造しました。HPバー上で重なっていたものを改善",
+		"description" : "Excrulon氏のアドオンを勝手に改造しました。[v1.0.1] HPバー上で重なっていたものを改善。[v1.0.2] ボスモンスターの処理が抜けてたので追加修正",
 		"tags" : [
 			"ui"
 		]
