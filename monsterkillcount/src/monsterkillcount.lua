@@ -302,6 +302,7 @@ end
 function MONSTERKILLCOUNT_START_COUNT()
   --敵リスト初期化処理
   g.settings.start = true;
+  g.settings.prevmap = true;
   MONSTERKILLCOUNT_INIT_ENEMY_LIST();
 
   --近くにいる敵をリストに入れる
