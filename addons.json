@@ -23,5 +23,16 @@
 		"tags" : [
 			"ui"
 		]
+	},{
+		"name" : "Monster Kill Count",
+		"file" : "monsterkillcount",
+		"extension" : "ipf",
+		"fileVersion" : "v1.0.0",
+		"releaseTag" : "monsterkillcount",
+		"unicode" : "⛄",
+		"description" : "Monogusa1244氏のDPK Helperを元に現状の仕様に合わせたものへ変更。チャンネル不問でマップごとにモンスターの討伐数を記録。マップから出ると計測を一時停止します。アイテム掘りの目安にどうぞ。",
+		"tags" : [
+			"ui"
+		]
 	}
 ]
