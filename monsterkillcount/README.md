@@ -1,8 +1,10 @@
-UI変更によって、HPが重なってしまっていたので勝手に改変しました。
-元の作者とは異なります。
+Monogusa1244氏が引退してしまい、現状の仕様に即していないので改変。
 
-HP表示に加えて、残数を％で表示するのも追加した
+-Startを押したマップ内のモンスター討伐数を記録します
+-チャンネルが変わっても継続してカウントします
+-別マップへ移動すると計測を停止し、元のマップへ戻ると計測を再開します
 
 元のアドオン
-<https://github.com/Excrulon/Tree-of-Savior-Addons/tree/master/addons/monsterframes/addon_d.ipf/monsterframes>
+<https://github.com/Monogusa1244/MonogusaAddonStore/tree/master/dpkhelper>
+
 
