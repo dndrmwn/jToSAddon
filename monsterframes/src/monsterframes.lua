@@ -239,7 +239,7 @@ end
 function TARGETINFOTOBOSS_ON_MSG_HOOKED(frame, msg, argStr, argNum)
 	_G["TARGETINFOTOBOSS_ON_MSG_OLD"](frame, msg, argStr, argNum);
 
-	if msg == "TARGET_UPDATE" then
+	if msg == "TARGET_UPDATE" or msg == 'TARGET_BUFF_UPDATE' then
 		local stat = info.GetStat(session.GetTargetBossHandle());
 
 		if stat == nil then
