@@ -1,40 +1,42 @@
 [
-	{
-		"name" : "CamCon",
-		"file" : "camcon",
-		"extension" : "ipf",
-		"fileVersion" : "v1.0.2",
-		"releaseTag" : "camcon",
-		"unicode" : "⛄",
-		"description" : "Camera coordinates can be changed with the GUI // カメラ座標をGUIで変更できます。SS撮影会にどうぞ 【撮影会以外で機能使うのは控えてね！某所の件もありましたし…】  ",
-		"tags" : [
-			"ui",
-			"camera",
-			"photo session"
-		]
-	},{
-		"name" : "Monster Frames",
-		"file" : "monsterframes",
-		"extension" : "ipf",
-		"fileVersion" : "v1.0.3",
-		"releaseTag" : "monsterframes",
-		"unicode" : "⛄",
-		"description" : "Excrulon氏のアドオンを勝手に改造しました。[v1.0.3] ボスのHP残数の表示がおかしい点を修正（されたはず）",
-		"tags" : [
-			"ui"
-		]
-	},{
-		"name" : "Monster Kill Count",
-		"file" : "monsterkillcount",
-		"extension" : "ipf",
-		"fileVersion" : "v1.0.1",
-		"releaseTag" : "monsterkillcount",
-		"unicode" : "⛄",
-		"description" : "Monogusa1244氏のDPK Helperを元に現状の仕様に合わせたものへ変更。チャンネル不問でマップごとにモンスターの討伐数を記録。マップから出ると計測を一時停止します。アイテム掘りの目安にどうぞ。",
-		"tags" : [
-			"ui",
-			"drop",
-			"count"
-		]
-	}
+    {
+        "name": "CamCon",
+        "file": "camcon",
+        "extension": "ipf",
+        "fileVersion": "v1.0.2",
+        "releaseTag": "camcon",
+        "unicode": "⛄",
+        "description": "[v1.0.2]weizlogy氏の修正を反映:フレームが移動できない問題。 Camera coordinates can be changed with the GUI // カメラ座標をGUIで変更できます。SS撮影会にどうぞ 【撮影会以外で機能使うのは控えてね！某所の件もありましたし…】  ",
+        "tags": [
+            "ui",
+            "camera",
+            "photo session"
+        ]
+    },
+    {
+        "name": "Monster Frames",
+        "file": "monsterframes",
+        "extension": "ipf",
+        "fileVersion": "v1.0.3",
+        "releaseTag": "monsterframes",
+        "unicode": "⛄",
+        "description": "Excrulon氏のアドオンを勝手に改造しました。[v1.0.3] ボスのHP残数の表示がおかしい点を修正（されたはず）",
+        "tags": [
+            "ui"
+        ]
+    },
+    {
+        "name": "Monster Kill Count",
+        "file": "monsterkillcount",
+        "extension": "ipf",
+        "fileVersion": "v1.0.1",
+        "releaseTag": "monsterkillcount",
+        "unicode": "⛄",
+        "description": "Monogusa1244氏のDPK Helperを元に現状の仕様に合わせたものへ変更。チャンネル不問でマップごとにモンスターの討伐数を記録。マップから出ると計測を一時停止します。アイテム掘りの目安にどうぞ。",
+        "tags": [
+            "ui",
+            "drop",
+            "count"
+        ]
+    }
 ]
