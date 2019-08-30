@@ -3,7 +3,7 @@
 		"name" : "CamCon",
 		"file" : "camcon",
 		"extension" : "ipf",
-		"fileVersion" : "v1.0.1",
+		"fileVersion" : "v1.0.2",
 		"releaseTag" : "camcon",
 		"unicode" : "⛄",
 		"description" : "Camera coordinates can be changed with the GUI // カメラ座標をGUIで変更できます。SS撮影会にどうぞ 【撮影会以外で機能使うのは控えてね！某所の件もありましたし…】  ",
