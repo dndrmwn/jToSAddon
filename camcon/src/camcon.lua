@@ -80,6 +80,7 @@ function CAMCON_ON_INIT(addon, frame)
 	
 	
 	--ドラッグ
+	frame:EnableMove(1);
 	frame:EnableHitTest(1);
 	frame:SetEventScript(ui.LBUTTONUP, "CAMCON_END_DRAG");
 
