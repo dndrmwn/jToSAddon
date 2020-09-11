@@ -1,5 +1,6 @@
 --dofile("../data/addon_d/monsterframes/monsterframes.lua");
 --edit suzumeiko / 20170825
+--     dndrmwn / 20200828
 local acutil = require("acutil");
 
 local settings = {
@@ -77,14 +78,14 @@ function TGTINFO_TARGET_SET_HOOKED(frame, msg, argStr, argNum)
 	end
 	
     local hpText = frame:GetChild('hpText');
-    hpText:SetText(GetCommaedText(stat.HP) .. "/" .. GetCommaedText(stat.maxHP) .. "(" .. (math.floor(stat.HP/stat.maxHP*100)) .. "%)");
+    hpText:SetText(GetCommaedText(stat.HP) .. "/" .. GetCommaedText(stat.maxHP) .. "(" .. (string.format("%.2f", stat.HP/stat.maxHP*100)) .. "%)");
 
-	local xPosition = 285;
+	local xPosition = 300;
 	local yPosition = 17;
 	local propertyWidth = 35;
 
 	if targetinfo.isElite == 1 then
-		xPosition = 117;
+		xPosition = 200;
 		yPosition = 12;
 	end
 
@@ -172,7 +173,7 @@ function TARGETINFO_ON_MSG_HOOKED(frame, msg, argStr, argNum)
 		--numhp:SetFontName("white_16_ol");
 		
     	local hpText = frame:GetChild('hpText');
-    	hpText:SetText(GetCommaedText(stat.HP) .. "/" .. GetCommaedText(stat.maxHP) .. "(" .. (math.floor(stat.HP/stat.maxHP*100)) .. "%)");
+    	hpText:SetText(GetCommaedText(stat.HP) .. "/" .. GetCommaedText(stat.maxHP) .. "(" .. (string.format("%.2f", stat.HP/stat.maxHP*100)) .. "%)");
 	end
 end
 
@@ -205,7 +206,7 @@ function TARGETINFOTOBOSS_TARGET_SET_HOOKED(frame, msg, argStr, argNum)
 	--bossHP:ShowWindow(1);
 	
     local hpText = frame:GetChild('hpText');
-    hpText:SetText(GetCommaedText(stat.HP) .. "/" .. GetCommaedText(stat.maxHP) .. "(" .. (math.floor(stat.HP/stat.maxHP*100)) .. "%)");
+    hpText:SetText(GetCommaedText(stat.HP) .. "/" .. GetCommaedText(stat.maxHP) .. "(" .. (string.format("%.2f", stat.HP/stat.maxHP*100)) .. "%)");
 
 	local monactor = world.GetActor(session.GetTargetBossHandle());
 	local montype = monactor:GetType();
@@ -255,7 +256,7 @@ function TARGETINFOTOBOSS_ON_MSG_HOOKED(frame, msg, argStr, argNum)
 		--bossHP:ShowWindow(1);
 		
     	local hpText = frame:GetChild('hpText');
-	    hpText:SetText(GetCommaedText(stat.HP) .. "/" .. GetCommaedText(stat.maxHP) .. "(" .. (math.floor(stat.HP/stat.maxHP*100)) .. "%)");
+	    hpText:SetText(GetCommaedText(stat.HP) .. "/" .. GetCommaedText(stat.maxHP) .. "(" .. (string.format("%.2f", stat.HP/stat.maxHP*100)) .. "%)");
 
 	end
 end
